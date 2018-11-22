@@ -1,0 +1,11 @@
+C:\Users\kirst\source\repos\Promations\Promations\bin\Debug\netcoreapp2.0\Promations.deps.json
+C:\Users\kirst\source\repos\Promations\Promations\bin\Debug\netcoreapp2.0\Promations.runtimeconfig.json
+C:\Users\kirst\source\repos\Promations\Promations\bin\Debug\netcoreapp2.0\Promations.runtimeconfig.dev.json
+C:\Users\kirst\source\repos\Promations\Promations\bin\Debug\netcoreapp2.0\Promations.dll
+C:\Users\kirst\source\repos\Promations\Promations\obj\Debug\netcoreapp2.0\Promations.csproj.CoreCompileInputs.cache
+C:\Users\kirst\source\repos\Promations\Promations\obj\Debug\netcoreapp2.0\Promations.AssemblyInfoInputs.cache
+C:\Users\kirst\source\repos\Promations\Promations\obj\Debug\netcoreapp2.0\Promations.AssemblyInfo.cs
+C:\Users\kirst\source\repos\Promations\Promations\bin\Debug\netcoreapp2.0\Promations.pdb
+C:\Users\kirst\source\repos\Promations\Promations\obj\Debug\netcoreapp2.0\Promations.dll
+C:\Users\kirst\source\repos\Promations\Promations\obj\Debug\netcoreapp2.0\Promations.pdb
+C:\Users\kirst\source\repos\Promations\Promations\obj\Debug\netcoreapp2.0\Promations.csprojAssemblyReference.cache

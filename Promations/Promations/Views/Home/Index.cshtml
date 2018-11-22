@@ -1,0 +1,135 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link href="~/css/Profile.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>Index</title>
+  
+</head>
+<body>
+
+    @{
+        ViewData["Title"] = "View";
+    }
+
+    <div class="header__wrapper">
+        <a class="header__item">login</a>
+
+
+    </div>
+    <div class="side__wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 half-top">
+                    <a class="link__item">Profile</a>
+                    <a class="link__item">Orders</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body__wrapper" data-bind="visible: $root.load()" style="display: none;">
+        <div data-bind="visible:!CanEditPromations()">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="profile__header">
+                            <h3>Promations</h3>
+                            <a class="right" data-bind="click:$root.addPromation">Add Promation</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>
+                                    Start
+                                </th>
+                                <th> End</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ko foreach: model.Promations -->
+                            <tr>
+                                <td data-bind="text:ProductName"></td>
+                                <td data-bind="text:Start"></td>
+                                <td data-bind="text:End"></td>
+                                <td><a data-bind="click:$root.editPromation">Edit</a><a data-bind="click:$root.deletePromation">Delete</a></td>
+                            </tr>
+
+                            <!--/ko-->
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div data-bind="template:{name:'editPromations', data: currentSelected}, visible:$root.CanEditPromations()"></div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/html" id="editPromations">
+        <div class="container-fluid">
+            <div class="col-xs-12">
+                <h3>Update Promations</h3>
+                <h3>Add Promations</h3>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Product Name</label>
+                    <!--ko if: canChange -->
+                    <select data-bind=" options:$root.model.Products, optionsText: 'ProductName', value:$root.currentProduct"></select>
+                    <!--/ko-->
+                    <!--ko if not: canChange -->
+                    <input type="text" class="input input__text" readonly data-bind="textInput:ProductName" />
+
+                    <!--/ko-->
+                </div>
+                <div class="col-xs-12 half-top">
+                    <label>Start</label>
+                    <input type="date" class="input input__text" id="promation-start" data-bind="textInput: Start" />
+                </div>
+                <div class="col-xs-12 half-top">
+                    <label>End</label>
+                    <input type="date" class="input input__text" id="promation-end" data-bind="textInput: End" />
+                </div>
+
+                <div class="col-xs-12 half-top">
+                    <button class="button button--green right" data-bind="click:$root.UpdatePromation">
+                        Save
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </script>
+
+    <script src="~/Scripts/moment.js"></script>
+    <script src="../../Scripts/knockout-3.4.2.js"></script>
+    <script src="../../ViewModel/ProfileViewModel.js"></script>
+</body>
+</html>
+
